@@ -32,11 +32,12 @@ public class Portal : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D target) {
+		float localScaleX = targetPortal.transform.localScale.x > 0 ? -1 : 1;
+
 		if (targetPortal) {
 			target.gameObject.transform.position = new Vector3(targetPortal.transform.position.x + (-targetPortal.transform.localScale.x * adjust), targetPortal.transform.position.y, 0);
-			target.gameObject.transform.localScale = new Vector3(-targetPortal.transform.localScale.x, targetPortal.transform.localScale.y, targetPortal.transform.localScale.z);
-		} else {
-
+			target.gameObject.transform.localScale = new Vector3(localScaleX, 1, targetPortal.transform.localScale.z);
+			target.rigidbody2D.AddForce(new Vector2(localScaleX * 250f, 50f));
 		}
 	}
 }
