@@ -27,27 +27,26 @@ public class Player : MonoBehaviour {
 		bool xVelocity = absVelX < maxVelocity.x;
 		bool yVelocity = absVelY < maxVelocity.y;
 
-		if (absVelY < .2f)
-			standing = true;
-		else
-			standing = false;
+		standing = absVelY < .2f ? true : false;
 
-		if (controller.moving.x != 0) {
+		if (controller.direction.x != 0) {
 			if (xVelocity) {
-				forceX = standing ? speed * controller.moving.x : (speed * controller.moving.x * airSpeedMultiplier);
+				forceX = standing ? speed * controller.direction.x : (speed * controller.direction.x * airSpeedMultiplier);
 				transform.localScale = new Vector3 (forceX > 0 ? 1 : -1, 1, 1);
 			}
 			animator.SetInteger ("AnimState", 1);
-		} else
+		} else {
 			animator.SetInteger ("AnimState", 0);
+		}
 
-		if (controller.moving.y > 0) {
+		if (controller.direction.y > 0) {
 			if (yVelocity) {
-				forceY = jetSpeed * controller.moving.y;
+				forceY = jetSpeed * controller.direction.y;
 			}
 			animator.SetInteger ("AnimState", 2);
-		} else if (absVelY > 0)
+		} else if (absVelY > 0) {
 			animator.SetInteger ("AnimState", 3);
+		}
 
 		rigidbody2D.AddForce(new Vector2(forceX, forceY));
 	}
