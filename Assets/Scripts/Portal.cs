@@ -11,11 +11,11 @@ public class Portal : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player");
-
+/*
 		if (player.transform.localScale.x < 0) {
 			transform.localScale = -transform.localScale;
 		}
-
+*/
 		if (tag == "BluePortal") {
 			targetPortal = GameObject.FindGameObjectWithTag("OrangePortal");
 		} else if (tag == "OrangePortal") {

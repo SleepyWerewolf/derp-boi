@@ -27,6 +27,7 @@ public class Shot : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		rigidbody2D.velocity = new Vector2 (transform.localScale.x, 0) * speed;
+		//rigidbody2D.velocity = new Vector2 (0, transform.localScale.y) * speed;
 	}
 
 	void OnTriggerEnter2D(Collider2D target) {
@@ -36,12 +37,14 @@ public class Shot : MonoBehaviour {
 				Destroy(bluePortals);
 				var portalPosition = new Vector3(transform.position.x + adjust, transform.position.y, transform.position.z);
 				Portal portal = Instantiate (bluePortal, portalPosition, transform.rotation) as Portal;
+				portal.transform.localScale = transform.localScale;
 				Destroy(gameObject);
 			} else if (tag == "OrangeShot") {
 				GameObject orangePortals = GameObject.FindGameObjectWithTag("OrangePortal");
 				Destroy(orangePortals);
 				var portalPosition = new Vector3(transform.position.x + adjust, transform.position.y, transform.position.z);
 				Portal portal = Instantiate (orangePortal, portalPosition, transform.rotation) as Portal;
+				portal.transform.localScale = transform.localScale;
 				Destroy(gameObject);
 			}
 		}
