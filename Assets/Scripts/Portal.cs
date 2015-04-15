@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Portal : MonoBehaviour {
 
-	public GameObject targetPortal;
+	public Portal targetPortal;
 	public GameObject player;
 	
 	public bool isBottom;
@@ -35,30 +35,31 @@ public class Portal : MonoBehaviour {
 		}
 
 		if (tag == "BluePortal") {
-			targetPortal = GameObject.FindGameObjectWithTag("OrangePortal");
+			targetPortal = GameObject.FindGameObjectWithTag("OrangePortal").GetComponent<Portal>();
 		} else if (tag == "OrangePortal") {
-			targetPortal = GameObject.FindGameObjectWithTag("BluePortal");
+			targetPortal = GameObject.FindGameObjectWithTag("BluePortal").GetComponent<Portal>();
 		}
 	}
 
 	// In case only one portal is in existence
 	void Update() {
 		if (tag == "BluePortal") {
-			targetPortal = GameObject.FindGameObjectWithTag("OrangePortal");
+			targetPortal = GameObject.FindGameObjectWithTag("OrangePortal").GetComponent<Portal>();
 		} else if (tag == "OrangePortal") {
-			targetPortal = GameObject.FindGameObjectWithTag("BluePortal");
+			targetPortal = GameObject.FindGameObjectWithTag("BluePortal").GetComponent<Portal>();
 		}
 	}
 
 	void OnTriggerEnter2D(Collider2D target) {
 		if (targetPortal && target.tag != "BlueShot" && target.tag != "OrangeShot") {
-			if (isTop || isBottom) {
-				localScaleX = targetPortal.transform.localScale.x > 0 ? -1 : 1;
-				target.gameObject.transform.position = new Vector3(targetPortal.transform.position.x + (-targetPortal.transform.localScale.x * adjust), targetPortal.transform.position.y, 0);
-				target.gameObject.transform.localScale = new Vector3(localScaleX, 1, targetPortal.transform.localScale.z);
-				target.rigidbody2D.AddForce(new Vector2(localScaleX * portalThrust, 50f));
+			localScaleX = targetPortal.transform.localScale.x > 0 ? -1 : 1;
+			if (targetPortal.isTop) {
+				target.gameObject.transform.position = new Vector3(targetPortal.transform.position.x, targetPortal.transform.position.y - .5f, 0);
+				target.rigidbody2D.AddForce(new Vector2(0, -portalThrust));
+			} else if (targetPortal.isBottom) {
+				target.gameObject.transform.position = new Vector3(targetPortal.transform.position.x, targetPortal.transform.position.y + 1f, 0);
+				target.rigidbody2D.AddForce(new Vector2(0, portalThrust));	
 			} else {
-				localScaleX = targetPortal.transform.localScale.x > 0 ? -1 : 1;
 				target.gameObject.transform.position = new Vector3(targetPortal.transform.position.x + (-targetPortal.transform.localScale.x * adjust), targetPortal.transform.position.y, 0);
 				target.gameObject.transform.localScale = new Vector3(localScaleX, 1, targetPortal.transform.localScale.z);
 				target.rigidbody2D.AddForce(new Vector2(localScaleX * portalThrust, 50f));
