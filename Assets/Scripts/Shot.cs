@@ -8,13 +8,15 @@ public class Shot : MonoBehaviour {
 	private float directionalAdjust = 1f;
 	private float horizontalAdjust = 1f;
 	private bool isDownShot;
+	private bool isUpShot;
+	private bool isLeftUpShot;
 	public Portal bluePortal, orangePortal;
 
 	private GameObject player;
 	private Vector2 direction;
 
 	void Start() {
-		isDownShot = false;
+		isDownShot = isUpShot = false;
 
 		// Get player object
 		player = GameObject.FindGameObjectWithTag("Player");
@@ -27,16 +29,21 @@ public class Shot : MonoBehaviour {
 		}
 
 		if (Input.GetKey("e") && player.transform.localScale.x > 0) {
+			isUpShot = true;
 			transform.position = new Vector3 (transform.position.x + .5f, transform.position.y + .5f, transform.position.z);
 			direction = new Vector2 (transform.localScale.x, transform.localScale.y);
 		} 
 
 		else if (Input.GetKey("q") && player.transform.localScale.x < 0) {
+			isUpShot = true;
+			isLeftUpShot = true;
 			transform.position = new Vector3 (transform.position.x - .5f, transform.position.y + .5f, transform.position.z);
+			transform.Rotate (Vector3.forward * 90);
 			direction = new Vector2 (transform.localScale.x, -transform.localScale.y);
 		} 
 
 		else if (Input.GetKey("w")) {
+			isUpShot = true;
 			// Prevent shot from colliding with floor
 			transform.position = new Vector3 (transform.position.x, transform.position.y + .5f, transform.position.z);
 			direction = new Vector2 (0, directionalAdjust * transform.localScale.y);
@@ -77,7 +84,6 @@ public class Shot : MonoBehaviour {
 				Portal portal = Instantiate (bluePortal, portalPosition, transform.rotation) as Portal;
 				portal.transform.localScale = transform.localScale;
 				Destroy(gameObject);
-				portal.isHorizontal = false;
 			} else if (tag == "OrangeShot") {
 				GameObject orangePortals = GameObject.FindGameObjectWithTag("OrangePortal");
 				Destroy(orangePortals);
@@ -85,29 +91,31 @@ public class Shot : MonoBehaviour {
 				Portal portal = Instantiate (orangePortal, portalPosition, transform.rotation) as Portal;
 				portal.transform.localScale = transform.localScale;
 				Destroy(gameObject);
-				portal.isHorizontal = false;
 			}
 		} else if (target.tag == "HorizontalWall") {
 			float portalPositionY;
 			if (tag == "BlueShot") {
 				GameObject bluePortals = GameObject.FindGameObjectWithTag("BluePortal");
 				Destroy(bluePortals);
-				if (isDownShot) {
+				if (isDownShot || isLeftUpShot) {
 					portalPositionY = transform.position.y - (horizontalAdjust * spacialAdjust);
-				}
-				else {
+				} else {
 					portalPositionY = transform.position.y + (horizontalAdjust * spacialAdjust);
 				}
 				var portalPosition = new Vector3(transform.position.x, portalPositionY, transform.position.z);
 				Portal portal = Instantiate (bluePortal, portalPosition, transform.rotation) as Portal;
 				portal.transform.localScale = transform.localScale;
 				Destroy(gameObject);
-				portal.isHorizontal = true;
+				if (isDownShot) {
+					portal.isBottom = true;
+				} else if (isUpShot) {
+					portal.isTop = true;
+				}
 			}
 			if (tag == "OrangeShot") {
 				GameObject orangePortals = GameObject.FindGameObjectWithTag("OrangePortal");
 				Destroy(orangePortals);
-				if (isDownShot) {
+				if (isDownShot || isLeftUpShot) {
 					portalPositionY = transform.position.y - (horizontalAdjust * spacialAdjust);
 				} else {
 					portalPositionY = transform.position.y + (horizontalAdjust * spacialAdjust);
@@ -116,7 +124,11 @@ public class Shot : MonoBehaviour {
 				Portal portal = Instantiate (orangePortal, portalPosition, transform.rotation) as Portal;
 				portal.transform.localScale = transform.localScale;
 				Destroy(gameObject);
-				portal.isHorizontal = true;
+				if (isDownShot) {
+					portal.isBottom = true;
+				} else if (isUpShot) {
+					portal.isTop = true;
+				}
 			}
 		}
 	}

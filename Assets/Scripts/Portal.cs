@@ -5,8 +5,9 @@ public class Portal : MonoBehaviour {
 
 	public GameObject targetPortal;
 	public GameObject player;
-	public bool isHorizontal;
-
+	
+	public bool isBottom;
+	public bool isTop;
 	private float adjust = 1f;
 	private float localScaleX = 0f;
 	public float portalThrust = 250f;
@@ -14,6 +15,18 @@ public class Portal : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player");
+
+		if (isTop) {
+			gameObject.transform.rotation = Quaternion.identity;
+			if (player.transform.localScale.x < 0)
+				transform.Rotate (Vector3.forward * 90);
+			else transform.Rotate (Vector3.forward * -90);
+		} else if (isBottom) {
+			gameObject.transform.rotation = Quaternion.identity;
+			if (player.transform.localScale.x < 0)
+				transform.Rotate (Vector3.forward * -90);
+			else transform.Rotate (Vector3.forward * 90);
+		}
 
 		if (tag == "BluePortal") {
 			targetPortal = GameObject.FindGameObjectWithTag("OrangePortal");
@@ -33,7 +46,7 @@ public class Portal : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D target) {
 		if (targetPortal && target.tag != "BlueShot" && target.tag != "OrangeShot") {
-			if (isHorizontal) {
+			if (isTop || isBottom) {
 				localScaleX = targetPortal.transform.localScale.x > 0 ? -1 : 1;
 				target.gameObject.transform.position = new Vector3(targetPortal.transform.position.x + (-targetPortal.transform.localScale.x * adjust), targetPortal.transform.position.y, 0);
 				target.gameObject.transform.localScale = new Vector3(localScaleX, 1, targetPortal.transform.localScale.z);
