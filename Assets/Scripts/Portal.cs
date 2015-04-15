@@ -8,6 +8,9 @@ public class Portal : MonoBehaviour {
 	
 	public bool isBottom;
 	public bool isTop;
+	public bool isRight;
+	public bool isLeft;
+
 	private float adjust = 1f;
 	private float localScaleX = 0f;
 	public float portalThrust = 250f;
@@ -16,16 +19,19 @@ public class Portal : MonoBehaviour {
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player");
 
+		gameObject.transform.rotation = Quaternion.identity;
 		if (isTop) {
-			gameObject.transform.rotation = Quaternion.identity;
 			if (player.transform.localScale.x < 0)
 				transform.Rotate (Vector3.forward * 90);
 			else transform.Rotate (Vector3.forward * -90);
 		} else if (isBottom) {
-			gameObject.transform.rotation = Quaternion.identity;
 			if (player.transform.localScale.x < 0)
 				transform.Rotate (Vector3.forward * -90);
 			else transform.Rotate (Vector3.forward * 90);
+		} else if (isRight) {
+			transform.Rotate (Vector3.forward * 180);
+		} else if (isLeft) {
+			transform.Rotate (Vector3.forward * -180);
 		}
 
 		if (tag == "BluePortal") {

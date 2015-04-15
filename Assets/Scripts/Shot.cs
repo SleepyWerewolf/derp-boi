@@ -84,6 +84,12 @@ public class Shot : MonoBehaviour {
 				Portal portal = Instantiate (bluePortal, portalPosition, transform.rotation) as Portal;
 				portal.transform.localScale = transform.localScale;
 				Destroy(gameObject);
+
+				if (portal.transform.localScale.x > 0) 
+					portal.isRight = true;
+				else if (portal.transform.localScale.x < 0)
+					portal.isLeft = true;
+					
 			} else if (tag == "OrangeShot") {
 				GameObject orangePortals = GameObject.FindGameObjectWithTag("OrangePortal");
 				Destroy(orangePortals);
@@ -91,6 +97,11 @@ public class Shot : MonoBehaviour {
 				Portal portal = Instantiate (orangePortal, portalPosition, transform.rotation) as Portal;
 				portal.transform.localScale = transform.localScale;
 				Destroy(gameObject);
+
+				if (portal.transform.localScale.x > 0) 
+					portal.isRight = true;
+				else if (portal.transform.localScale.x < 0)
+					portal.isLeft = true;
 			}
 		} else if (target.tag == "HorizontalWall") {
 			float portalPositionY;
