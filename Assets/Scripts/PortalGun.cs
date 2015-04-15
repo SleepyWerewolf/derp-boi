@@ -9,25 +9,24 @@ public class PortalGun : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		player = GameObject.FindGameObjectWithTag("Player");
 		// Rotate up
 		if (Input.GetKeyDown("w")) {
 			transform.Rotate (Vector3.forward * -90);
-			/*
-			if (Input.GetKeyDown("d")) {
-				transform.Rotate (Vector3.forward * -45);
-			} if (Input.GetKeyUp("d")) transform.Rotate (Vector3.forward * 45);
-			
-			if (Input.GetKeyDown("a")) {
-				transform.Rotate (Vector3.forward * 45);
-			}  if (Input.GetKeyUp("a")) transform.Rotate (Vector3.forward * -45);
-			*/
-
 		} if (Input.GetKeyUp("w")) transform.Rotate (Vector3.forward * 90);
 
 		// Rotate down
 		if (Input.GetKeyDown("s")) {
 			transform.Rotate (Vector3.forward * 90);
 		} if (Input.GetKeyUp("s")) transform.Rotate (Vector3.forward * -90);
+
+		if (Input.GetKeyDown("e")) {
+			transform.Rotate (Vector3.forward * -45);
+		} if (Input.GetKeyUp("e")) transform.Rotate (Vector3.forward * 45);
+
+		if (Input.GetKeyDown("q")) {
+			transform.Rotate (Vector3.forward * -45);
+		} if (Input.GetKeyUp("q")) transform.Rotate (Vector3.forward * 45);
 
 		if (Input.GetMouseButtonDown(0)) {
 			Shot shot = Instantiate (blueShot, transform.position, transform.rotation) as Shot;
