@@ -12,20 +12,20 @@ Platform assembly: C:\Users\Viet Truong\Desktop\Programming Shit\Unity Games\sup
 Loading C:\Users\Viet Truong\Desktop\Programming Shit\Unity Games\super2Djetroid\derpboi_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\Viet Truong\Desktop\Programming Shit\Unity Games\super2Djetroid\derpboi_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\Viet Truong\Desktop\Programming Shit\Unity Games\super2Djetroid\derpboi_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.038 seconds
+- Completed reload, in  0.035 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 Platform assembly: C:\Users\Viet Truong\Desktop\Programming Shit\Unity Games\super2Djetroid\derpboi_Data\Managed\System.Core.dll (this message is harmless)
-UnloadTime: 0.411602 ms
+UnloadTime: 0.351801 ms
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
 Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 9661.
-Total: 1.150502 ms (FindLiveObjects: 0.253495 ms CreateObjectMapping: 0.029170 ms MarkObjects: 0.349176 ms  DeleteObjects: 0.200987 ms)
+Total: 1.292273 ms (FindLiveObjects: 0.309212 ms CreateObjectMapping: 0.028295 ms MarkObjects: 0.423562 ms  DeleteObjects: 0.222866 ms)
 
-UnloadTime: 6.263881 ms
+UnloadTime: 7.221272 ms
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
 Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 12389.
-Total: 1.109955 ms (FindLiveObjects: 0.273915 ms CreateObjectMapping: 0.050174 ms MarkObjects: 0.445440 ms  DeleteObjects: 0.075844 ms)
+Total: 1.947453 ms (FindLiveObjects: 0.495614 ms CreateObjectMapping: 0.094513 ms MarkObjects: 0.847416 ms  DeleteObjects: 0.105598 ms)
 
