@@ -52,8 +52,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd7f9c838f722ed42baa7b8a1883e52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPortal: {fileID: 143106, guid: 8dd52773e150f2548afd2f5928cda297, type: 2}
+  targetPortal: {fileID: 0}
   player: {fileID: 0}
+  isBottom: 0
+  isTop: 0
+  isRight: 0
+  isLeft: 0
+  portalThrust: 250
 --- !u!212 &21206948
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -73,7 +78,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: 21300064, guid: 47886c9f55b008d4ba6211f3ea0775e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000

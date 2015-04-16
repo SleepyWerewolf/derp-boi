@@ -10,8 +10,10 @@ TagManager:
   - Portal
   - BlueShot
   - OrangeShot
-  - VeritcalWall
+  - VerticalWall
   - HorizontalWall
+  - StartGame
+  - Credits
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

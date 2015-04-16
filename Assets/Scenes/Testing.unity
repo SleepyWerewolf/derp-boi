@@ -171,7 +171,7 @@ GameObject:
   - 61: {fileID: 596463725}
   m_Layer: 0
   m_Name: TestPlatform
-  m_TagString: PortalEnabled
+  m_TagString: HorizontalWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,7 +264,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 144754, guid: 32a2035bffe63e0438feb41c9688d4b6, type: 2}
       propertyPath: m_TagString
-      value: PortalEnabled
+      value: HorizontalWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32a2035bffe63e0438feb41c9688d4b6, type: 2}
@@ -320,7 +320,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 144754, guid: 32a2035bffe63e0438feb41c9688d4b6, type: 2}
       propertyPath: m_TagString
-      value: VeritcalWall
+      value: VerticalWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32a2035bffe63e0438feb41c9688d4b6, type: 2}
@@ -368,7 +368,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 144754, guid: 32a2035bffe63e0438feb41c9688d4b6, type: 2}
       propertyPath: m_TagString
-      value: PortalEnabled
+      value: HorizontalWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32a2035bffe63e0438feb41c9688d4b6, type: 2}
@@ -468,7 +468,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 144754, guid: 32a2035bffe63e0438feb41c9688d4b6, type: 2}
       propertyPath: m_TagString
-      value: VeritcalWall
+      value: VerticalWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32a2035bffe63e0438feb41c9688d4b6, type: 2}
@@ -585,7 +585,7 @@ GameObject:
   - 61: {fileID: 1537728979}
   m_Layer: 0
   m_Name: TestPlatform
-  m_TagString: PortalEnabled
+  m_TagString: HorizontalWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -646,11 +646,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 490784, guid: c1474a42dbd601a488dd155aa6215274, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.63000011
+      value: -3.42000008
       objectReference: {fileID: 0}
     - target: {fileID: 490784, guid: c1474a42dbd601a488dd155aa6215274, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.81999993
+      value: -3.58999991
       objectReference: {fileID: 0}
     - target: {fileID: 490784, guid: c1474a42dbd601a488dd155aa6215274, type: 2}
       propertyPath: m_LocalPosition.z
@@ -837,7 +837,7 @@ Transform:
   m_PrefabInternal: {fileID: 1663057076}
   m_GameObject: {fileID: 1820208565}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.63000011, y: -3.81999993, z: 0}
+  m_LocalPosition: {x: -3.42000008, y: -3.58999991, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 2066814390}
@@ -855,7 +855,7 @@ GameObject:
   - 61: {fileID: 1898784461}
   m_Layer: 0
   m_Name: TestPlatform
-  m_TagString: VeritcalWall
+  m_TagString: VerticalWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -985,7 +985,7 @@ GameObject:
   - 61: {fileID: 2104811810}
   m_Layer: 0
   m_Name: TestPlatform
-  m_TagString: VeritcalWall
+  m_TagString: VerticalWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

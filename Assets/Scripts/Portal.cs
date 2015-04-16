@@ -34,19 +34,27 @@ public class Portal : MonoBehaviour {
 			transform.Rotate (Vector3.forward * -180);
 		}
 
-		if (tag == "BluePortal") {
+		if (tag == "BluePortal" && GameObject.FindGameObjectWithTag("OrangePortal")) {
 			targetPortal = GameObject.FindGameObjectWithTag("OrangePortal").GetComponent<Portal>();
-		} else if (tag == "OrangePortal") {
+		} else if (tag == "OrangePortal" && GameObject.FindGameObjectWithTag("BluePortal")) {
 			targetPortal = GameObject.FindGameObjectWithTag("BluePortal").GetComponent<Portal>();
 		}
 	}
 
 	// In case only one portal is in existence
 	void Update() {
-		if (tag == "BluePortal") {
+		if (tag == "BluePortal" && GameObject.FindGameObjectWithTag("OrangePortal")) {
 			targetPortal = GameObject.FindGameObjectWithTag("OrangePortal").GetComponent<Portal>();
-		} else if (tag == "OrangePortal") {
+		} else if (tag == "OrangePortal" && GameObject.FindGameObjectWithTag("BluePortal")) {
 			targetPortal = GameObject.FindGameObjectWithTag("BluePortal").GetComponent<Portal>();
+		}
+
+		if (Input.GetMouseButtonDown(2)) {
+			Debug.Log("hello");
+			var orangePortals = GameObject.FindGameObjectWithTag("OrangePortal");
+			var bluePortals = GameObject.FindGameObjectWithTag("BluePortal");
+			Destroy(orangePortals);
+			Destroy(bluePortals);
 		}
 	}
 
@@ -54,7 +62,7 @@ public class Portal : MonoBehaviour {
 		if (targetPortal && target.tag != "BlueShot" && target.tag != "OrangeShot") {
 			localScaleX = targetPortal.transform.localScale.x > 0 ? -1 : 1;
 			if (targetPortal.isTop) {
-				target.gameObject.transform.position = new Vector3(targetPortal.transform.position.x, targetPortal.transform.position.y - .5f, 0);
+				target.gameObject.transform.position = new Vector3(targetPortal.transform.position.x, targetPortal.transform.position.y - 1f, 0);
 				target.rigidbody2D.AddForce(new Vector2(0, -portalThrust));
 			} else if (targetPortal.isBottom) {
 				target.gameObject.transform.position = new Vector3(targetPortal.transform.position.x, targetPortal.transform.position.y + 1f, 0);
