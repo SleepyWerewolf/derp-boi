@@ -16,9 +16,4 @@ public class CameraFollowPlayer : MonoBehaviour {
 		if (_t)
 			transform.position = new Vector3 (_t.position.x, _t.position.y + 2f, transform.position.z);
 	}
-/*
-	void Awake() {
-		camera.orthographicSize = ((Screen.height / 2.0f) / 100f); // Aspect Ratio
-	}
-*/
 }

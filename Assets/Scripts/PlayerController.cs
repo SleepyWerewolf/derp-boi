@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 	
+	public bool canFly;
 	public Vector2 direction = new Vector2();
 
 	// Update is called once per frame
@@ -16,10 +17,14 @@ public class PlayerController : MonoBehaviour {
 			direction.x = -1;
 		}
 		
-		if (Input.GetKey ("space") || Input.GetKey("up")) {
-			direction.y = 1;
-		} else if (Input.GetKey ("down")) {
-			direction.y = -1;
+		if (canFly) {
+			if (Input.GetKey ("space") || Input.GetKey("up")) {
+				direction.y = 1;
+			}
+		} else {
+			if (Input.GetKeyDown ("space")) {
+				direction.y = 1;
+			}
 		}
 		
 	}

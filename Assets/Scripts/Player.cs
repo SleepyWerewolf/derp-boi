@@ -9,7 +9,7 @@ public class Player : MonoBehaviour {
 	public float jetSpeed = 15f;
 	public float airSpeedMultiplier = .3f;
 
-	private Animator animator;	
+	private Animator animator;
 	private PlayerController controller;
 
 	void Start() {
@@ -41,7 +41,10 @@ public class Player : MonoBehaviour {
 
 		if (controller.direction.y > 0) {
 			if (yVelocity) {
-				forceY = jetSpeed * controller.direction.y;
+				if (!controller.canFly) {
+					if (standing)
+						forceY = jetSpeed * controller.direction.y;
+				} else forceY = jetSpeed * controller.direction.y;
 			}
 			animator.SetInteger ("AnimState", 2);
 		} else if (absVelY > 0) {
