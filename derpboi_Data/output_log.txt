@@ -1,0 +1,31 @@
+Initialize engine version: 4.6.3f1 (4753d8b6ef2b)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 660 Ti (ID=0x1183)
+    Vendor:   NVIDIA
+    VRAM:     1955 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Viet Truong\Desktop\Programming Shit\Unity Games\super2Djetroid\derpboi_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Viet Truong\Desktop\Programming Shit\Unity Games\super2Djetroid\derpboi_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Viet Truong\Desktop\Programming Shit\Unity Games\super2Djetroid\derpboi_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Viet Truong\Desktop\Programming Shit\Unity Games\super2Djetroid\derpboi_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Viet Truong\Desktop\Programming Shit\Unity Games\super2Djetroid\derpboi_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Viet Truong\Desktop\Programming Shit\Unity Games\super2Djetroid\derpboi_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.038 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: C:\Users\Viet Truong\Desktop\Programming Shit\Unity Games\super2Djetroid\derpboi_Data\Managed\System.Core.dll (this message is harmless)
+UnloadTime: 0.411602 ms
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 9661.
+Total: 1.150502 ms (FindLiveObjects: 0.253495 ms CreateObjectMapping: 0.029170 ms MarkObjects: 0.349176 ms  DeleteObjects: 0.200987 ms)
+
+UnloadTime: 6.263881 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 12389.
+Total: 1.109955 ms (FindLiveObjects: 0.273915 ms CreateObjectMapping: 0.050174 ms MarkObjects: 0.445440 ms  DeleteObjects: 0.075844 ms)
+
