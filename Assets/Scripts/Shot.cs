@@ -141,6 +141,6 @@ public class Shot : MonoBehaviour {
 					portal.isTop = true;
 				}
 			}
-		}
+		} else if (target.tag == "PortalDisabled" || target.tag == "AntiPortalDoor") Destroy(gameObject);
 	}
 }

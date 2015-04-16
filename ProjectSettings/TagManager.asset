@@ -14,6 +14,9 @@ TagManager:
   - HorizontalWall
   - StartGame
   - Credits
+  - PortalDisabled
+  - PortalEnabled
+  - AntiPortalDoor
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

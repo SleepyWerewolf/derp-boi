@@ -48,6 +48,9 @@ public class Door : MonoBehaviour {
 
 	public void Open() {
 		animator.SetInteger ("AnimState", 1);
+		if (tag != "AntiPortalDoor") {
+			tag = "PortalEnabled";
+		}
 	}
 
 	public void Close() {
@@ -57,6 +60,9 @@ public class Door : MonoBehaviour {
 	private IEnumerator CloseNow() {
 		yield return new WaitForSeconds (closeDelay);
 		animator.SetInteger ("AnimState", 2);
+		if (tag != "AntiPortalDoor") {
+			tag = "PortalDisabled";
+		}
 	}
 
 }
