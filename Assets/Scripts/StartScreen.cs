@@ -6,8 +6,7 @@ public class StartScreen : MonoBehaviour {
 	public int startScene;
 	public int creditsScene;
 
-	private bool loadLock; // to make sure player doesn't load a bunch of scenes
-
+	// Loads level based on what the player shoots
 	void OnTriggerEnter2D(Collider2D target) {
 		if (tag == "StartGame") {
 			LoadScene(startScene);
@@ -19,7 +18,6 @@ public class StartScreen : MonoBehaviour {
 	}
 
 	void LoadScene(int scene) {
-		loadLock = true;
 		Application.LoadLevel (scene);
 	}
 }

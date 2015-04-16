@@ -10,11 +10,6 @@ public class Switch : MonoBehaviour {
 	void Start () {
 		animator = GetComponent<Animator> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
 	void OnTriggerEnter2D(Collider2D target) {
 		animator.SetInteger ("AnimState", 1);
@@ -24,10 +19,5 @@ public class Switch : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D target) {
 		animator.SetInteger ("AnimState", 2);
 		door.Close ();
-	}
-
-	void OnDrawGizmos() {
-		Gizmos.color = Color.green;
-		Gizmos.DrawLine (transform.position, door.transform.position);
 	}
 }

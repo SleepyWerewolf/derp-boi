@@ -5,7 +5,7 @@ public class Player : MonoBehaviour {
 
 	public float speed = 10f;
 	public Vector2 maxVelocity = new Vector2(3, 5);
-	public bool standing; // default is false
+	public bool standing;
 	public float jetSpeed = 15f;
 	public float airSpeedMultiplier = .3f;
 
@@ -17,11 +17,11 @@ public class Player : MonoBehaviour {
 		animator = GetComponent<Animator> ();
 	}
 
-	// Update is called once per frame
 	void Update () {
 		float forceX = 0f;
 		float forceY = 0f;
 
+		// Determine what direction player is moving
 		var absVelX = Mathf.Abs (rigidbody2D.velocity.x);
 		var absVelY = Mathf.Abs (rigidbody2D.velocity.y);
 		bool xVelocity = absVelX < maxVelocity.x;
@@ -29,6 +29,7 @@ public class Player : MonoBehaviour {
 
 		standing = absVelY < .2f ? true : false;
 
+		// Horizontal movement
 		if (controller.direction.x != 0) {
 			if (xVelocity) {
 				forceX = standing ? speed * controller.direction.x : (speed * controller.direction.x * airSpeedMultiplier);
@@ -39,6 +40,7 @@ public class Player : MonoBehaviour {
 			animator.SetInteger ("AnimState", 0);
 		}
 
+		// Vertical movement
 		if (controller.direction.y > 0) {
 			if (yVelocity) {
 				if (!controller.canFly) {

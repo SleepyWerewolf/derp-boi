@@ -15,7 +15,8 @@ public class Portal : MonoBehaviour {
 	private float localScaleX = 0f;
 	public float portalThrust = 1000f;
 
-	// Use this for initialization
+	//	Portal dynamically realigns itself based
+	//	on the surface it hits
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player");
 
@@ -50,7 +51,6 @@ public class Portal : MonoBehaviour {
 		}
 
 		if (Input.GetMouseButtonDown(2)) {
-			Debug.Log("hello");
 			var orangePortals = GameObject.FindGameObjectWithTag("OrangePortal");
 			var bluePortals = GameObject.FindGameObjectWithTag("BluePortal");
 			Destroy(orangePortals);
@@ -58,6 +58,8 @@ public class Portal : MonoBehaviour {
 		}
 	}
 
+	// 	Portal dynamically thrusts the target in the opposite direction
+	//	based on the portal's positioning
 	void OnTriggerEnter2D(Collider2D target) {
 		if (targetPortal && target.tag != "BlueShot" && target.tag != "OrangeShot") {
 			localScaleX = targetPortal.transform.localScale.x > 0 ? -1 : 1;

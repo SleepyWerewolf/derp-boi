@@ -70,11 +70,13 @@ public class Shot : MonoBehaviour {
 		Destroy(gameObject, 10);
 	}
 
-	// Update is called once per frame
+	// Movement
 	void Update () {
 		rigidbody2D.velocity = direction * speed;
 	}
 
+	// 	Instantiates portal object based on direction of bullet
+	//	and the surface it collides with
 	void OnTriggerEnter2D(Collider2D target) {
 		if (target.tag == "VerticalWall") {
 			if (tag == "BlueShot") {

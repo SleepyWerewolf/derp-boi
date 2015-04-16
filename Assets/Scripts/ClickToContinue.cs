@@ -6,7 +6,7 @@ public class ClickToContinue : MonoBehaviour {
 	public string scene;
 	private bool loadLock; // to make sure player doesn't load a bunch of scenes
 	
-	// Update is called once per frame
+	// Reload scene once player dies
 	void Update () {
 		if (Input.GetMouseButtonDown (0) && !loadLock)
 			LoadScene ();

@@ -16,12 +16,9 @@ public class Door : MonoBehaviour {
 	void Start () {
 		animator = GetComponent<Animator> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
+	// Various states used by animator
+	// to allow player to enter
 	void OnOpenStart() {
 		state = OPENING;
 	}
@@ -46,6 +43,8 @@ public class Door : MonoBehaviour {
 		collider2D.enabled = true;
 	}
 
+	// 	Change tags to allow Portal Shot to go through
+	//	an open door
 	public void Open() {
 		animator.SetInteger ("AnimState", 1);
 		if (tag != "AntiPortalDoor") {
@@ -57,6 +56,8 @@ public class Door : MonoBehaviour {
 		StartCoroutine (CloseNow ());
 	}
 
+	// 	Change tags to prevent shots
+	// 	going through an open door
 	private IEnumerator CloseNow() {
 		yield return new WaitForSeconds (closeDelay);
 		animator.SetInteger ("AnimState", 2);

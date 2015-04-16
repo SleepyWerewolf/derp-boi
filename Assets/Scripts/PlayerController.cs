@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour {
 			direction.x = -1;
 		}
 		
+		//	Makes the adjustment based on whether the active player
+		//	is using the portal gun model or the jetpack model
 		if (canFly) {
 			if (Input.GetKey ("space") || Input.GetKey("up")) {
 				direction.y = 1;

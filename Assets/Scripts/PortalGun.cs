@@ -4,12 +4,9 @@ using System.Collections;
 public class PortalGun : MonoBehaviour {
 	
 	public Shot blueShot, orangeShot;
-	private GameObject player;
-	private float directionalAdjust = 1f;
 
-	// Update is called once per frame
+	// 	Detects player input in order to rotate gun sprite in proper direction
 	void Update () {
-		player = GameObject.FindGameObjectWithTag("Player");
 		// Rotate up
 		if (Input.GetKeyDown("w")) {
 			transform.Rotate (Vector3.forward * -90);
@@ -35,11 +32,3 @@ public class PortalGun : MonoBehaviour {
 		}
 	}
 }
-
-
-/*
-		Vector3 position = Camera.main.WorldToScreenPoint(transform.position);
-		Vector3 direction = Input.mousePosition - position;
-		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-		transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-*/
