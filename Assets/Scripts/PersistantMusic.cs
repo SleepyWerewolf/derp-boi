@@ -8,5 +8,11 @@ public class PersistantMusic : MonoBehaviour {
 	void Start () {
 		DontDestroyOnLoad(gameObject);
 	}
+
+	void Update() {
+		if (Application.loadedLevel == 4) {
+			Destroy(gameObject);
+		}
+	}
 	
 }
