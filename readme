@@ -26,13 +26,18 @@ it to get past some of the traps you'll face.
 Movement:
 d ............... Move Right
 a ............... Move Left
-space ........... Jump/Fly (hold to fly)
+space ........... Jump/Fly (flight is disabled after finding the portal gun)
 
 
 Sources:
 
-Art assets provided by Jesse Freeman via lynda.com
+Art assets and some tutorials provided by Jesse Freeman via lynda.com
 	- http://www.lynda.com/Jesse-Freeman/2853349-1.html
+        - Used parts of tutorials 3, 4 and 6 to create a player, build objects, and the background of the level
+        - Player code was changed significantly to remove the flying feature as well as to incorporate gun mechanics
 
 Additional 'Portal' assets provided by 'lady2010' on DeviantArt
 	- http://lady2010.deviantart.com/art/Portal-sprites-323889715
+
+Spaceship assets by "Rozebau" Pixel Joint
+        - http://www.pixeljoint.com/pixelart/48537.htm
