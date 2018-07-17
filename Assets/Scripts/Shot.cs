@@ -72,7 +72,7 @@ public class Shot : MonoBehaviour {
 
 	// Movement
 	void Update () {
-		rigidbody2D.velocity = direction * speed;
+		GetComponent<Rigidbody2D>().velocity = direction * speed;
 	}
 
 	// 	Instantiates portal object based on direction of bullet

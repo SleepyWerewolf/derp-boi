@@ -65,14 +65,14 @@ public class Portal : MonoBehaviour {
 			localScaleX = targetPortal.transform.localScale.x > 0 ? -1 : 1;
 			if (targetPortal.isTop) {
 				target.gameObject.transform.position = new Vector3(targetPortal.transform.position.x, targetPortal.transform.position.y - 1f, 0);
-				target.rigidbody2D.AddForce(new Vector2(0, -portalThrust));
+				target.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -portalThrust));
 			} else if (targetPortal.isBottom) {
 				target.gameObject.transform.position = new Vector3(targetPortal.transform.position.x, targetPortal.transform.position.y + 1f, 0);
-				target.rigidbody2D.AddForce(new Vector2(0, portalThrust));	
+				target.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, portalThrust));	
 			} else {
 				target.gameObject.transform.position = new Vector3(targetPortal.transform.position.x + (-targetPortal.transform.localScale.x * adjust), targetPortal.transform.position.y, 0);
 				target.gameObject.transform.localScale = new Vector3(localScaleX, 1, targetPortal.transform.localScale.z);
-				target.rigidbody2D.AddForce(new Vector2(localScaleX * portalThrust, 0));
+				target.GetComponent<Rigidbody2D>().AddForce(new Vector2(localScaleX * portalThrust, 0));
 			}
 		}
 	}

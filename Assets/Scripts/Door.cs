@@ -36,11 +36,11 @@ public class Door : MonoBehaviour {
 	}
 
 	void DisableCollider2D() {
-		collider2D.enabled = false;
+		GetComponent<Collider2D>().enabled = false;
 	}
 
 	void EnableCollider2D() {
-		collider2D.enabled = true;
+		GetComponent<Collider2D>().enabled = true;
 	}
 
 	// 	Change tags to allow Portal Shot to go through

@@ -19,9 +19,9 @@ public class BodyPart : MonoBehaviour {
 	void Update () {
 		t += Time.deltaTime;
 
-		renderer.material.color = Color.Lerp (start, end, t / 2);
+		GetComponent<Renderer>().material.color = Color.Lerp (start, end, t / 2);
 
-		if (renderer.material.color.a <= 0.0)
+		if (GetComponent<Renderer>().material.color.a <= 0.0)
 			Destroy (gameObject);
 	}
 }

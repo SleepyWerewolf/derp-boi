@@ -26,8 +26,8 @@ public class Explode : MonoBehaviour {
 		for (int i=0; i < totalParts; i++) {
 			t.TransformPoint (0, -100, 0);
 			BodyPart clone = Instantiate(bodyPart, t.position, Quaternion.identity) as BodyPart;
-			clone.rigidbody2D.AddForce (Vector3.right * Random.Range (-50, 50));
-			clone.rigidbody2D.AddForce (Vector3.up * Random.Range (100, 400));
+			clone.GetComponent<Rigidbody2D>().AddForce (Vector3.right * Random.Range (-50, 50));
+			clone.GetComponent<Rigidbody2D>().AddForce (Vector3.up * Random.Range (100, 400));
 		}
 
 		GameObject click = new GameObject ("ClickToContinue");

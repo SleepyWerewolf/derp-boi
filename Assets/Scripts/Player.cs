@@ -22,8 +22,8 @@ public class Player : MonoBehaviour {
 		float forceY = 0f;
 
 		// Determine what direction player is moving
-		var absVelX = Mathf.Abs (rigidbody2D.velocity.x);
-		var absVelY = Mathf.Abs (rigidbody2D.velocity.y);
+		var absVelX = Mathf.Abs (GetComponent<Rigidbody2D>().velocity.x);
+		var absVelY = Mathf.Abs (GetComponent<Rigidbody2D>().velocity.y);
 		bool xVelocity = absVelX < maxVelocity.x;
 		bool yVelocity = absVelY < maxVelocity.y;
 
@@ -53,6 +53,6 @@ public class Player : MonoBehaviour {
 			animator.SetInteger ("AnimState", 3);
 		}
 
-		rigidbody2D.AddForce(new Vector2(forceX, forceY));
+		GetComponent<Rigidbody2D>().AddForce(new Vector2(forceX, forceY));
 	}
 }
